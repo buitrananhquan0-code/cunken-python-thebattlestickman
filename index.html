@@ -6,8 +6,8 @@
     <title>Trang Tải Game - Cunken</title>
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #1e1e2f, #2d2d44);
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e); /* Màu tối huyền bí hơn */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -17,88 +17,106 @@
         }
 
         .card {
-            background: #ffffff;
-            width: 320px;
-            padding: 30px;
-            border-radius: 25px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+            background: rgba(255, 255, 255, 0.95); /* Nền trắng hơi trong suốt */
+            width: 350px;
+            padding: 40px 30px;
+            border-radius: 30px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.6);
             text-align: center;
-            transition: transform 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
 
         .card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 30px 60px rgba(255, 71, 87, 0.3);
         }
 
+        /* Phần hiển thị Logo của Quân */
         .file-icon {
-            width: 100px;
-            height: 100px;
-            background: #f0f0f0;
-            border-radius: 20px;
-            margin-bottom: 20px;
-            object-fit: cover;
-            border: 3px solid #eee;
+            width: 140px; 
+            height: 140px;
+            object-fit: contain; /* Giữ đúng tỉ lệ logo không bị méo */
+            margin-bottom: 25px;
+            filter: drop-shadow(0 10px 15px rgba(0,0,0,0.2));
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover .file-icon {
+            transform: rotate(5deg) scale(1.1);
         }
 
         h2 {
-            color: #333;
-            margin: 10px 0;
-            font-size: 24px;
+            color: #1e1e2f;
+            margin: 15px 0 5px;
+            font-size: 28px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        p {
-            color: #777;
-            font-size: 14px;
-            margin-bottom: 25px;
-            line-height: 1.5;
+        .version-info {
+            color: #555;
+            font-size: 15px;
+            margin-bottom: 30px;
+            background: #f0f2f5;
+            padding: 8px;
+            border-radius: 10px;
+            display: inline-block;
         }
 
         .btn-download {
             display: block;
-            background-color: #ff4757;
+            background: linear-gradient(45deg, #ff4757, #ff6b81);
             color: white;
             text-decoration: none;
-            padding: 15px;
-            border-radius: 12px;
+            padding: 18px;
+            border-radius: 15px;
             font-weight: bold;
-            font-size: 16px;
+            font-size: 18px;
             transition: 0.3s;
             cursor: pointer;
             border: none;
             width: 100%;
+            box-shadow: 0 8px 20px rgba(255, 71, 87, 0.4);
         }
 
         .btn-download:hover {
-            background-color: #ff6b81;
-            box-shadow: 0 5px 15px rgba(255, 71, 87, 0.4);
+            background: linear-gradient(45deg, #ff6b81, #ff4757);
+            box-shadow: 0 12px 25px rgba(255, 71, 87, 0.6);
+            transform: translateY(-2px);
         }
 
         .footer-text {
-            margin-top: 15px;
-            font-size: 11px;
-            color: #bbb;
+            margin-top: 25px;
+            font-size: 12px;
+            color: #888;
+            font-weight: 500;
         }
+
+        b { color: #ff4757; }
     </style>
 </head>
 <body>
 
     <div class="card">
-        <img src="https://cdn-icons-png.flaticon.com/512/3408/3408455.png" alt="Game Icon" class="file-icon">
+        <img src="logo the battle stickman.svg" alt="The Battle Stickman Logo" class="file-icon">
         
         <h2>The Battle Stickman</h2>
-        <p>Phiên bản: <b>1.0.0</b><br>
-           Nhà phát triển: <b>Cunken</b></p>
+        <div class="version-info">
+            Phiên bản: <b>1.0.0</b> | Dev: <b>Cunken</b>
+        </div>
 
         <button class="btn-download" onclick="thongBao()">
             TẢI XUỐNG NGAY
         </button>
 
-        <p class="footer-text">Trang web được tạo bởi Cunken</p>
+        <p class="footer-text">© 2026 Designed by Cunken trên Github</p>
     </div>
 
     <script>
         function thongBao() {
-            alert("⚠️ Thông báo: Game hiện đang trong quá trình bảo trì hoặc đang phát triển. Vui lòng quay lại sau nhé!");
+            alert("⚠️ Đang bảo trì hệ thống tải!\nMaster Quân đang tối ưu hóa engine trên Python 3.14. Quay lại sau nhé Sigma!");
         }
     </script>
 
